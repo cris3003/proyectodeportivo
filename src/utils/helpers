@@ -1,0 +1,12 @@
+const jwt = require('jsonwebtoken');
+
+const createToken = (user) => {
+
+    const data = {
+        id: user.id,
+        username: user.username
+    }
+    return jwt.sign(data, 'Usuarios contentos');
+}
+
+module.exports = { createToken }
